@@ -1,0 +1,40 @@
+def rootConfiguration = rootProject.ext
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+    }
+}
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootConfiguration.compileSdkVersion
+    buildToolsVersion rootConfiguration.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.pinterest"
+        minSdkVersion rootConfiguration.minSdkVersion
+        targetSdkVersion rootConfiguration.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile "junit:junit:${rootConfiguration.jUnitVersion}"
+    testCompile "org.mockito:mockito-core:${rootConfiguration.mockito}"
+    compile project(':ImageDownloadingLib')
+
+}

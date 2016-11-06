@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pinterest</string>
+    <string name="welcome">Welcome to Pinterest, the world\'s catalog of ideas</string>
+    <string name="x_like">%1$d Like</string>
+    <string name="x_likes">%1$d Likes</string>
+    <string name="retry">Retry</string>
+    <string name="check_internet_connection">Please check your internet connection.</string>
+    <string name="server_error">Seems like some error has occured. Try again later.</string>
+    <string name="categories">Categories</string>
+
+</resources>
